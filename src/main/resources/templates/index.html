@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+<h1>This is home page..</h1>
+
+<form th:action="@{/users/save}"
+      th:object="${user}" method="post"
+      enctype="multipart/form-data">
+
+    <div>
+        <label>Photos: </label>
+        <input type="file" name="image" accept="image/png, image/jpeg, image/jpg"/>
+    </div>
+
+    <button type="submit">Save</button>
+
+</form>
+
+<a th:href="@{/show}">Show</a>
+
+</body>
+</html>

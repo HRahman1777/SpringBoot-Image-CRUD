@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+
+<th:block th:each="user: ${users}">
+    <img th:src="@{'uploadedPhotos/'+${user.id}+'/'+${user.photos}}" style="max-width: 15rem; height: 15rem;">
+    <br>
+    <a th:href="|@{/file/edit}/${user.id}|">Edit</a>
+    <a th:href="|@{/file/delete}/${user.id}|">Delete</a>
+    <br>
+    <br>
+    <br>
+</th:block>
+
+
+</body>
+</html>

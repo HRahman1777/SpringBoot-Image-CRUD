@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+
+<h1>This is Edit page..</h1>
+
+<div th:text="${user}"></div>
+
+<form th:action="@{/file/edit}" method="post"
+      enctype="multipart/form-data">
+    <input type="text" th:value="${user.id}" name="sid"/>
+    <div>
+        <label>Photos: </label>
+        <input type="file" name="image" accept="image/png, image/jpeg, image/jpg"/>
+    </div>
+
+    <button type="submit">Edit</button>
+
+</form>
+
+</body>
+</html>
